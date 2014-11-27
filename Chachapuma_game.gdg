@@ -30,7 +30,6 @@
             <extension name="BuiltinStringInstructions" />
             <extension name="BuiltinMathematicalTools" />
             <extension name="BuiltinExternalLayouts" />
-            <extension name="ParticleSystem" />
             <extension name="TextObject" />
         </extensions>
         <platforms>
@@ -545,7 +544,7 @@
                 <object bold="false" italic="false" name="Fault" smoothed="true" type="TextObject::Text" underlined="false">
                     <variables />
                     <automatisms />
-                    <string>                                        MULTA: 2,000.00 BOLIVIANOS&#x0A;&#x0A;         CANCELE DIRECTAMENTE AL POLICIA, PARA SU  COMODIDAD. :)</string>
+                    <string>MULTA: 2,000.00 BOLIVIANOS&#x0A;&#x0A; CANCELE DIRECTAMENTE AL POLICIA, PARA SU COMODIDAD. :)</string>
                     <font></font>
                     <characterSize>20</characterSize>
                     <color b="0" g="0" r="255" />
@@ -631,7 +630,7 @@
                             <type inverted="false" value="Timer" />
                             <parameters>
                                 <parameter></parameter>
-                                <parameter>0.7</parameter>
+                                <parameter>0.5</parameter>
                                 <parameter>&quot;ChachapumaTimer&quot;</parameter>
                             </parameters>
                             <subConditions />
@@ -820,6 +819,15 @@
                             </parameters>
                             <subConditions />
                         </condition>
+                        <condition>
+                            <type inverted="false" value="Timer" />
+                            <parameters>
+                                <parameter></parameter>
+                                <parameter>0.5</parameter>
+                                <parameter>&quot;Fault&quot;</parameter>
+                            </parameters>
+                            <subConditions />
+                        </condition>
                     </conditions>
                     <actions>
                         <action>
@@ -827,6 +835,14 @@
                             <parameters>
                                 <parameter>Fault</parameter>
                                 <parameter></parameter>
+                            </parameters>
+                            <subActions />
+                        </action>
+                        <action>
+                            <type inverted="false" value="ChangeTimeScale" />
+                            <parameters>
+                                <parameter></parameter>
+                                <parameter>0</parameter>
                             </parameters>
                             <subActions />
                         </action>
